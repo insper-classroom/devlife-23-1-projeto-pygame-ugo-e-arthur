@@ -6,44 +6,167 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="CSS.css">
 	<style>
-		section {
+		/* Estilos para o cabeçalho */
+		header {
+			background-color: #F7941D;
 			text-align: center;
+			padding: 5px 0;
+			color: white;
+			width: 100%;
+			left: 0;
+			position: fixed;
+			top: 0;
+			z-index: 1;
+		}
+
+		/* Estilos para o menu */
+		nav {
+			position: fixed;
+			top: 70px;
+			right: 0;
+			background-color: #F7941D;
+			z-index: 1;
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			border-radius: 4px;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		nav li {
+			margin-bottom: 10px;
+		}
+
+		nav a {
+			color: white;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			border-radius: 4px;
+			transition: background-color 0.3s ease;
+		}
+
+		nav a:hover {
+			background-color: #F36D21;
+		}
+
+		/* Estilos para as seções */
+		section {
+			margin-top: 120px;
+			text-align: center;
+			scroll-margin-top: 70px;
+		}
+
+		.section-description {
+			font-size: 24px;
+			color: #F7941D;
+		}
+
+		/* Componentes */
+		.member-list {
+			font-size: 20px;
+			color: #F7941D;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.member-list li {
+			margin-bottom: 10px;
+		}
+
+		/* log de desenvolvimento */
+		.section-log {
+			font-size: 24px;
+			color: #F7941D;
+		}
+
+		.log-text {
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 10px;
+		}
+
+		/*botão de download */
+		.download-button {
+			background-color: #F7941D;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			margin: 20px 0;
+			cursor: pointer;
+			border-radius: 4px;
+			animation: pulsar 1s;
+		}
+
+		/* Efeito de scroll suave */
+		html {
+			scroll-behavior: smooth;
 		}
 	</style>
-
 </head>
 <body>
 	<div class="corner-images"></div>
 	<header>
 		<h1>SHOW DO MIRANDA</h1>
 	</header>	
+	<nav>
+		<ul>
+			<li><a href="#descricao">Descrição</a></li>
+			<li><a href="#membros">Membros</a></li>
+			<li><a href="#log">Log de Desenvolvimento</a></li>
+			<li><a href="#download">Download</a></li>
+			<li><a href="#video">Vídeo do Jogo</a></li>
+			<li><a href="#avaliacao">Avaliação Heurística</a></li>
+		</ul>
+	</nav>
 	<img src="../miranda copy.png" alt= "miranda" class="pulsar" width="540" height="560">
-    <section class="section-description">
+    <section id="descricao" class="section-description">
 	<h2>Descrição do jogo:</h2>
 	<p>Inclua aqui algumas telas do jogo.</p>
-</section>
-<section>
+    </section>
+	<section id="membros">
 	<h2>Membros:</h2>
 	<ul class="member-list">
 		<li>Arthur Meschede</li>
 		<li>Ugo Mello de Alcantara</li>
 	</ul>
-</section>
-<section class="section-log">
+    </section>
+	<section id="log" class="section-log">
 	<h2>Log de desenvolvimento:</h2>
 	<p class="log-text">Aqui você pode adicionar um log de desenvolvimento, utilizando as mensagens de commit como referência.
 	</p>
-<p>Link para download do pacote (zip) do jogo:</p>
-<a href="caminho/do/arquivo.zip" class="download-button">Download</a>
-<h2>Instruções para executar o jogo:</h2>
-<ol>
-	<h1> Passo 1</h1>
-	<h2> Passo 2</h2>
-	<h2> Passo 3</h2>
-</ol>
-<h2>Vídeo do jogo:</h2>
-<video src="caminho/do/video.mp4" width="640" height="360" controls></video>
-<h2>Relato da avaliação heurística:</h2>
+	<h2>Instruções para executar o jogo:</h2>
+	<ol>
+		<h1> Passo 1</h1>
+		<h2> Passo 2</h2>
+		<h2> Passo 3</h2>
+	</ol>
+	<h2>Relato da avaliação heurística:</h2>
+	<p>Aqui você pode adicionar um relato da avaliação heurística, descrevendo os problemas de usabilidade encontrados na primeira versão da página e as soluções desenvolvidas na versão final.</p>
+	<p>Para comparar, inclua imagens da primeira versão da página e da versão final.</p>
+	</section>
+	<section id="download">
+		<p>Link para download do pacote (zip) do jogo:</p>
+		<a href="caminho/do/arquivo.zip" class="download-button">Download</a>
+	</section>
+	<section id="video">
+		<h2>Vídeo do jogo:</h2>
+		<video src="video.mp4" width="640" height="360" controls></video>
+	</section>
+	<section id="avaliacao">
+		<h2>Relato da avaliação heurística:</h2>
 <p>Aqui você pode adicionar um relato da avaliação heurística, descrevendo os problemas de usabilidade encontrados na primeira versão da página e as soluções desenvolvidas na versão final.</p>
 <p>Para comparar, inclua imagens da primeira versão da página e da versão final.</p>
 
