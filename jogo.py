@@ -16,12 +16,12 @@ laranja_claro = (255, 140, 0)
 # Define fontes
 titulo = pygame.font.Font('Chendolle.otf', 100)
 imagem_texto_titulo = titulo.render('Show do Miranda', True, (0, 0, 0))
-opcao1 = pygame.font.Font('Chendolle.otf', 40)
-imagem_texto_opcao1 = titulo.render('Jogar', True, (0, 0, 0))
-opcao2 = pygame.font.Font('Chendolle.otf', 40)
-imagem_texto_opcao2 = titulo.render('Instruções', True, (0, 0, 0))
-opcao3 = pygame.font.Font('Chendolle.otf', 40)
-imagem_texto_opcao3 = titulo.render('Créditos', True, (0, 0, 0))
+texto_jogar = pygame.font.Font('Chendolle.otf', 40)
+imagem_texto_jogar = titulo.render('Jogar', True, (0, 0, 0))
+texto_instrucoes = pygame.font.Font('Chendolle.otf', 40)
+imagem_texto_instrucoes = titulo.render('Instruções', True, (0, 0, 0))
+texto_creditos = pygame.font.Font('Chendolle.otf', 40)
+imagem_texto_creditos = titulo.render('Créditos', True, (0, 0, 0))
 
 # Define Imagens - Miranda
 cara = pygame.image.load('Miranda_Fabio.png')
@@ -55,10 +55,8 @@ while True:
             if jogar.collidepoint(mouse_pos):
                 print("Botão Jogar clicado")
             elif instrucoes.collidepoint(mouse_pos):
-                print("Botão Instruções clicado")
                 funcoes.tela_instrucoes(tela)
             elif creditos.collidepoint(mouse_pos):
-                print("Botão Créditos clicado")
                 funcoes.tela_creditos(tela)
 
     # Preenche a tela com branco
@@ -87,14 +85,15 @@ while True:
     tela.blit(imagem_texto_titulo, (80, 20))
 
     # Escreve Retangulos
-    tela.blit(imagem_texto_opcao1, (300, 200))
-    tela.blit(imagem_texto_opcao2, (210, 320))
-    tela.blit(imagem_texto_opcao3, (250, 440))
+    tela.blit(imagem_texto_jogar, (300, 200))
+    tela.blit(imagem_texto_instrucoes, (210, 320))
+    tela.blit(imagem_texto_creditos, (250, 440))
 
     # Atualiza a tela
     pygame.display.update()
 
     # Aguarda um tempo para atualizar a animação
     pygame.time.wait(intervalos_animacao_miranda)
+
 
 

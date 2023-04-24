@@ -1,5 +1,6 @@
 import pygame
 
+# desenha a tela de instrucoes
 def tela_instrucoes(tela):
     # Define cores, fontes e imagens
     branco = (255, 255, 255)
@@ -50,7 +51,7 @@ def tela_instrucoes(tela):
         # Atualiza a tela
         pygame.display.update()
 
-
+# desenha a tela de creditos
 def tela_creditos(tela):
     # Define cores, fontes e imagens
     branco = (255, 255, 255)
@@ -94,6 +95,19 @@ def tela_creditos(tela):
         
         # Atualiza a tela
         pygame.display.update()
+
+def desenha_interface_fases(tela):
+    branco = (255, 255, 255)
+    preto = (0, 0, 0)
+    laranja = (230, 115, 0)
+    laranja_escuro = (200, 100, 0)
+    laranja_claro = (255, 140, 0)
+    tela.fill(branco)
+    Alternativa1 = pygame.Rect(20, 530, 150, 60)
+    Alternativa2 = pygame.Rect(20, 530, 150, 60)
+    Alternativa3 = pygame.Rect(20, 530, 150, 60)
+    Alternativa4 = pygame.Rect(20, 530, 150, 60)
+
 
  
 
