@@ -1,0 +1,123 @@
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #F7941D;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    width: 100%;
+  }
+  
+  /* Estilos para a descrição do jogo */
+  .section-description {
+    font-size: 24px;
+    color: #F7941D;
+  }
+  
+  /* Estilos para a lista de membros */
+  .member-list {
+    font-size: 20px;
+    color: #F7941D;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .member-list li {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para o log de desenvolvimento */
+  .section-log {
+    font-size: 24px;
+    color: #F7941D;
+  }
+  
+  .log-text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para o botão de download */
+  .download-button {
+    background-color: #F7941D;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    animation: pulsar 1s infinite;
+  }
+  
+  @keyframes pulsar {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  
+  /* Estilos para a lista de instruções */
+  .instruction-list {
+    font-size: 20px;
+    color: #F7941D;
+    list-style-type: decimal;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .instruction-list li {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para o vídeo */
+  .section-video {
+    font-size: 24px;
+    color: #F7941D;
+  }
+  
+  .video-player {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para o relato da avaliação heurística */
+  .section-evaluation {
+    font-size: 24px;
+    color: #F7941D;
+  }
+  
+  .evaluation-text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer {
+    background-color: #F7941D;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    }
