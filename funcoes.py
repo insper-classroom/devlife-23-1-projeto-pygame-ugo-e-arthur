@@ -145,6 +145,13 @@ def desenha_interface_fases(tela):
     tela.blit(xzinho,(745, 22))
 
 
+def desenha_quantidade_moedas(tela):
+    i = 0
+    fonte = pygame.font.Font('Chendolle.otf', (60))
+    moeda = fonte.render(f'{i}', True, (0, 0, 0))
+    tela.blit(moeda, (708, 5))
+
+
  
 
 
