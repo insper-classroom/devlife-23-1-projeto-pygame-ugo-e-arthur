@@ -75,6 +75,12 @@ def tela_creditos(tela):
     # Loop da tela de instruções
     while True:
         for event in pygame.event.get():
+            mouse_pos = pygame.mouse.get_pos()
+            if voltar.collidepoint(mouse_pos):
+                voltar = pygame.Rect(10, 520, 170, 80)
+            else:
+                voltar = pygame.Rect(20, 530, 150, 60)
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -91,11 +97,11 @@ def tela_creditos(tela):
         tela.blit(titulo, (230, 20))
         tela.blit(texto1, (230, 150))
         tela.blit(texto2, (230, 200))
-        # interface Retangulo
+       # interface Retangulo
         pygame.draw.rect(tela, laranja, voltar)
         pygame.draw.rect(tela, laranja_escuro, voltar, 5)
         pygame.draw.rect(tela, laranja_claro, voltar.inflate(-10, -10))
-        tela.blit(seta, (65, 535))
+        tela.blit(seta, (75, 545))
 
         
         # Atualiza a tela
