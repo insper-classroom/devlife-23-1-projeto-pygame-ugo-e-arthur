@@ -2,16 +2,21 @@ import pygame
 
 # desenha a tela de instrucoes
 def tela_instrucoes(tela):
-    # Define cores, fontes e imagens
+# -----------cores--------------------------------------
     branco = (255, 255, 255)
     preto = (0, 0, 0)
     laranja = (230, 115, 0)
     laranja_escuro = (200, 100, 0)
     laranja_claro = (255, 140, 0)
+# -----------cores--------------------------------------
+# -----------fonte--------------------------------------
     fonte_titulo = pygame.font.Font('Chendolle.otf', 90)
     fonte_texto = pygame.font.Font('Chendolle.otf', 30)
+# -----------fonte--------------------------------------
+# -----------imagem--------------------------------------
     seta = pygame.image.load('seta-esquerda.png')
     seta = pygame.transform.scale(seta, (50, 50))
+# -----------imagem--------------------------------------
 
     # Define o retângulo do botão de voltar
     voltar = pygame.Rect(20, 530, 150, 60)
@@ -98,15 +103,40 @@ def tela_creditos(tela):
 
 def desenha_interface_fases(tela):
     branco = (255, 255, 255)
-    preto = (0, 0, 0)
     laranja = (230, 115, 0)
     laranja_escuro = (200, 100, 0)
     laranja_claro = (255, 140, 0)
+    roxo = (147, 112, 219)
+    preto = (0, 0, 0)
+    alternativa_A = pygame.Rect(60, 250, 310, 80)
+    alternativa_B = pygame.Rect(430, 250, 310, 80)
+    alternativa_C = pygame.Rect(60, 390, 310, 80)
+    alternativa_D = pygame.Rect(430, 390, 310, 80)
+    retangulo = pygame.Rect(700, -10, 1000, 70)
+    coin = pygame.image.load('MCoin.png')
+    coin = pygame.transform.scale(coin, (60, 60))
+    fonte = pygame.font.Font('Chendolle.otf', 40)
+    xzinho = fonte.render('x', True, preto)
     tela.fill(branco)
-    Alternativa1 = pygame.Rect(20, 530, 150, 60)
-    Alternativa2 = pygame.Rect(20, 530, 150, 60)
-    Alternativa3 = pygame.Rect(20, 530, 150, 60)
-    Alternativa4 = pygame.Rect(20, 530, 150, 60)
+    pygame.draw.rect(tela, laranja, alternativa_A)
+    pygame.draw.rect(tela, laranja_escuro, alternativa_A, 5)
+    pygame.draw.rect(tela, laranja_claro, alternativa_A.inflate(-10, -10))
+    pygame.draw.rect(tela, laranja, alternativa_B)
+    pygame.draw.rect(tela, laranja_escuro, alternativa_B, 5)
+    pygame.draw.rect(tela, laranja_claro, alternativa_B.inflate(-10, -10))
+    pygame.draw.rect(tela, laranja, alternativa_C)
+    pygame.draw.rect(tela, laranja_escuro, alternativa_C, 5)
+    pygame.draw.rect(tela, laranja_claro, alternativa_C.inflate(-10, -10))
+    pygame.draw.rect(tela, laranja, alternativa_D)
+    pygame.draw.rect(tela, laranja_escuro, alternativa_D, 5)
+    pygame.draw.rect(tela, laranja_claro, alternativa_D.inflate(-10, -10))
+    pygame.draw.rect(tela, laranja, retangulo)
+    pygame.draw.rect(tela, laranja_escuro, retangulo, 5)
+    pygame.draw.rect(tela, laranja_claro, retangulo.inflate(-10, -10))
+    pygame.draw.circle(tela, roxo, (50, 50), 40)
+    pygame.draw.circle(tela, laranja_escuro, (50, 50), 42, 5)
+    tela.blit(coin, (752, 8))
+    tela.blit(xzinho,(745, 22))
 
 
  

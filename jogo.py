@@ -1,4 +1,4 @@
-import pygame, funcoes
+import pygame, funcoes, funcoes_fases
 
 pygame.init()
 
@@ -6,6 +6,9 @@ pygame.init()
 largura_tela = 800
 altura_tela = 600
 tela = pygame.display.set_mode((largura_tela, altura_tela))
+
+# Define a caption do nosso jogo
+pygame.display.set_caption('Show do Miranda')
 
 # Define as cores
 branco = (255, 255, 255)
@@ -53,7 +56,7 @@ while True:
             mouse_pos = event.pos  # Posição do mouse ao clicar
             # Verifica se o mouse clicou em um dos botões
             if jogar.collidepoint(mouse_pos):
-                print("Botão Jogar clicado")
+                funcoes_fases.fase_1(tela)
             elif instrucoes.collidepoint(mouse_pos):
                 funcoes.tela_instrucoes(tela)
             elif creditos.collidepoint(mouse_pos):
