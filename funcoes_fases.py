@@ -1,4 +1,5 @@
 import pygame, funcoes
+
 # --------cores----------------
 branco = (255, 255, 255)
 preto = (0, 0, 0)
@@ -130,8 +131,8 @@ def fase_4(tela):
     pergunta =  fonte_pergunta.render('Ano de fundacao do insper?.', True, preto)
     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
     A = fonte_alternativa.render('2002', True, preto)
-    B = fonte_alternativa.render('1980', True, preto)
-    C = fonte_alternativa.render('1987', True, preto)
+    B = fonte_alternativa.render('1987', True, preto)
+    C = fonte_alternativa.render('1980', True, preto)
     D = fonte_alternativa.render('1992', True, preto)
     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
     nivel = fonte_nivel.render('4.', True, preto)
@@ -142,10 +143,10 @@ def fase_4(tela):
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
-                if  alternativa_C.collidepoint(mouse_pos):
+                if  alternativa_B.collidepoint(mouse_pos):
                     fase_5(tela)
                     break
-                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                if alternativa_A.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
                     print('agua') # e aqui exibir a tela derrota
 
         tela.fill(branco)
@@ -338,12 +339,80 @@ def fase_10(tela):
     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
     pergunta =  fonte_pergunta.render('ONDE ERA A CERTA DA QUESTAO 4?.', True, preto)
     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
-    A = fonte_alternativa.render('', True, preto)
-    B = fonte_alternativa.render('USP', True, preto)
-    C = fonte_alternativa.render('U.OXFORD', True, preto)
-    D = fonte_alternativa.render('Federal PE', True, preto)
+    A = fonte_alternativa.render('Direita', True, preto)
+    B = fonte_alternativa.render('Baixo', True, preto)
+    C = fonte_alternativa.render('Esquerda', True, preto)
+    D = fonte_alternativa.render('Cima', True, preto)
     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
-    nivel = fonte_nivel.render('3.', True, preto)
+    nivel = fonte_nivel.render('10.', True, preto)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+                if  alternativa_D.collidepoint(mouse_pos):
+                    fase_11(tela)
+                    break
+                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                    print('agua') # e aqui exibir a tela derrota
+        tela.fill(branco)
+        funcoes.desenha_interface_fases(tela)
+        funcoes.desenha_quantidade_moedas(tela)
+        tela.blit(nivel, (35, 5))
+        tela.blit(nivel, (35, 5))
+        tela.blit(A, (120, 250))
+        tela.blit(B, (515, 255))
+        tela.blit(C, (155, 400))
+        tela.blit(D, (515, 390))
+        tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
+        pygame.display.update()
+        
+def fase_11(tela):
+    fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
+    pergunta =  fonte_pergunta.render('Qual nao tem no 4* semestre?.', True, preto)
+    fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
+    A = fonte_alternativa.render('MACHINE L.', True, preto)
+    B = fonte_alternativa.render('HARDWARE', True, preto)
+    C = fonte_alternativa.render('ALGORITIMO', True, preto)
+    D = fonte_alternativa.render('DEVLIFE', True, preto)
+    fonte_nivel = pygame.font.Font('Chendolle.otf',85)
+    nivel = fonte_nivel.render('11.', True, preto)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+                if  alternativa_D.collidepoint(mouse_pos):
+                    fase_12(tela)
+                    break
+                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                    print('agua') # e aqui exibir a tela derrota
+        tela.fill(branco)
+        funcoes.desenha_interface_fases(tela)
+        funcoes.desenha_quantidade_moedas(tela)
+        tela.blit(nivel, (35, 5))
+        tela.blit(nivel, (35, 5))
+        tela.blit(A, (120, 250))
+        tela.blit(B, (515, 255))
+        tela.blit(C, (155, 400))
+        tela.blit(D, (515, 390))
+        tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
+        pygame.display.update()
+        
+def fase_12(tela):
+    fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
+    pergunta =  fonte_pergunta.render('PRINCIPAL LINGUAGEM DE IA?.', True, preto)
+    fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
+    A = fonte_alternativa.render('C', True, preto)
+    B = fonte_alternativa.render('JAVA', True, preto)
+    C = fonte_alternativa.render('PYTHON', True, preto)
+    D = fonte_alternativa.render('PHP', True, preto)
+    fonte_nivel = pygame.font.Font('Chendolle.otf',85)
+    nivel = fonte_nivel.render('12.', True, preto)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -352,9 +421,78 @@ def fase_10(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_C.collidepoint(mouse_pos):
-                    fase_3(tela)
+                    fase_13(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    print('agua') # e aqui exibir a tela derrota
+        tela.fill(branco)
+        funcoes.desenha_interface_fases(tela)
+        funcoes.desenha_quantidade_moedas(tela)
+        tela.blit(nivel, (35, 5))
+        tela.blit(nivel, (35, 5))
+        tela.blit(A, (120, 250))
+        tela.blit(B, (515, 255))
+        tela.blit(C, (155, 400))
+        tela.blit(D, (515, 390))
+        tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
+        pygame.display.update()
+        
+def fase_13(tela):
+    fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
+    pergunta =  fonte_pergunta.render('SISTEMA OPERACIONAL DO PC DA SALA 312?.', True, preto)
+    fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
+    A = fonte_alternativa.render('LINUX', True, preto)
+    B = fonte_alternativa.render('MACOS', True, preto)
+    C = fonte_alternativa.render('WINDOWS', True, preto)
+    D = fonte_alternativa.render('NAO TEM', True, preto)
+    fonte_nivel = pygame.font.Font('Chendolle.otf',85)
+    nivel = fonte_nivel.render('13.', True, preto)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+                if  alternativa_A.collidepoint(mouse_pos):
+                    fase_14(tela)
+                    break
+                if alternativa_C.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    print('agua') # e aqui exibir a tela derrota
+
+        tela.fill(branco)
+        funcoes.desenha_interface_fases(tela)
+        funcoes.desenha_quantidade_moedas(tela)
+        tela.blit(nivel, (35, 5))
+        tela.blit(nivel, (35, 5))
+        tela.blit(A, (120, 250))
+        tela.blit(B, (515, 255))
+        tela.blit(C, (155, 400))
+        tela.blit(D, (515, 390))
+        tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
+        pygame.display.update()
+        
+def fase_14(tela):
+    fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
+    pergunta =  fonte_pergunta.render('QUANTAS MESAS TEM NA SALA DE 312?.', True, preto)
+    fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
+    A = fonte_alternativa.render('25', True, preto)
+    B = fonte_alternativa.render('26', True, preto)
+    C = fonte_alternativa.render('27', True, preto)
+    D = fonte_alternativa.render('28', True, preto)
+    fonte_nivel = pygame.font.Font('Chendolle.otf',85)
+    nivel = fonte_nivel.render('14.', True, preto)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+                if  alternativa_D.collidepoint(mouse_pos):
+                    fase_3(tela)
+                    break
+                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
                     print('agua') # e aqui exibir a tela derrota
 
 
@@ -370,154 +508,6 @@ def fase_10(tela):
         tela.blit(D, (515, 390))
         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
         pygame.display.update()
-        
-# def fase_3(tela):
-#     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-#     pergunta =  fonte_pergunta.render('Qual faculdade a grazi nao estudou?.', True, preto)
-#     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
-#     A = fonte_alternativa.render('UNICAMP', True, preto)
-#     B = fonte_alternativa.render('USP', True, preto)
-#     C = fonte_alternativa.render('U.OXFORD', True, preto)
-#     D = fonte_alternativa.render('Federal PE', True, preto)
-#     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
-#     nivel = fonte_nivel.render('3.', True, preto)
-#     while True:
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 pygame.quit()
-#                 quit()
-#             if event.type == pygame.MOUSEBUTTONDOWN:
-#                 mouse_pos = event.pos
-#                 if  alternativa_C.collidepoint(mouse_pos):
-#                     fase_3(tela)
-#                     break
-#                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
-#                     print('agua') # e aqui exibir a tela derrota
-
-
-
-#         tela.fill(branco)
-#         funcoes.desenha_interface_fases(tela)
-#         funcoes.desenha_quantidade_moedas(tela)
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(A, (120, 250))
-#         tela.blit(B, (515, 255))
-#         tela.blit(C, (155, 400))
-#         tela.blit(D, (515, 390))
-#         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
-#         pygame.display.update()
-        
-# def fase_3(tela):
-#     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-#     pergunta =  fonte_pergunta.render('Qual faculdade a grazi nao estudou?.', True, preto)
-#     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
-#     A = fonte_alternativa.render('UNICAMP', True, preto)
-#     B = fonte_alternativa.render('USP', True, preto)
-#     C = fonte_alternativa.render('U.OXFORD', True, preto)
-#     D = fonte_alternativa.render('Federal PE', True, preto)
-#     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
-#     nivel = fonte_nivel.render('3.', True, preto)
-#     while True:
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 pygame.quit()
-#                 quit()
-#             if event.type == pygame.MOUSEBUTTONDOWN:
-#                 mouse_pos = event.pos
-#                 if  alternativa_C.collidepoint(mouse_pos):
-#                     fase_3(tela)
-#                     break
-#                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
-#                     print('agua') # e aqui exibir a tela derrota
-
-
-
-#         tela.fill(branco)
-#         funcoes.desenha_interface_fases(tela)
-#         funcoes.desenha_quantidade_moedas(tela)
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(A, (120, 250))
-#         tela.blit(B, (515, 255))
-#         tela.blit(C, (155, 400))
-#         tela.blit(D, (515, 390))
-#         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
-#         pygame.display.update()
-        
-# def fase_3(tela):
-#     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-#     pergunta =  fonte_pergunta.render('Qual faculdade a grazi nao estudou?.', True, preto)
-#     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
-#     A = fonte_alternativa.render('UNICAMP', True, preto)
-#     B = fonte_alternativa.render('USP', True, preto)
-#     C = fonte_alternativa.render('U.OXFORD', True, preto)
-#     D = fonte_alternativa.render('Federal PE', True, preto)
-#     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
-#     nivel = fonte_nivel.render('3.', True, preto)
-#     while True:
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 pygame.quit()
-#                 quit()
-#             if event.type == pygame.MOUSEBUTTONDOWN:
-#                 mouse_pos = event.pos
-#                 if  alternativa_C.collidepoint(mouse_pos):
-#                     fase_3(tela)
-#                     break
-#                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
-#                     print('agua') # e aqui exibir a tela derrota
-
-
-
-#         tela.fill(branco)
-#         funcoes.desenha_interface_fases(tela)
-#         funcoes.desenha_quantidade_moedas(tela)
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(A, (120, 250))
-#         tela.blit(B, (515, 255))
-#         tela.blit(C, (155, 400))
-#         tela.blit(D, (515, 390))
-#         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
-#         pygame.display.update()
-        
-# def fase_3(tela):
-#     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-#     pergunta =  fonte_pergunta.render('Qual faculdade a grazi nao estudou?.', True, preto)
-#     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
-#     A = fonte_alternativa.render('UNICAMP', True, preto)
-#     B = fonte_alternativa.render('USP', True, preto)
-#     C = fonte_alternativa.render('U.OXFORD', True, preto)
-#     D = fonte_alternativa.render('Federal PE', True, preto)
-#     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
-#     nivel = fonte_nivel.render('3.', True, preto)
-#     while True:
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 pygame.quit()
-#                 quit()
-#             if event.type == pygame.MOUSEBUTTONDOWN:
-#                 mouse_pos = event.pos
-#                 if  alternativa_C.collidepoint(mouse_pos):
-#                     fase_3(tela)
-#                     break
-#                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
-#                     print('agua') # e aqui exibir a tela derrota
-
-
-
-#         tela.fill(branco)
-#         funcoes.desenha_interface_fases(tela)
-#         funcoes.desenha_quantidade_moedas(tela)
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(A, (120, 250))
-#         tela.blit(B, (515, 255))
-#         tela.blit(C, (155, 400))
-#         tela.blit(D, (515, 390))
-#         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
-#         pygame.display.update()
         
 # def fase_3(tela):
 #     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
