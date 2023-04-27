@@ -1,4 +1,4 @@
-import pygame, funcoes, funcoes_fases
+import pygame, funcoes, funcoes_fases,emoji
 
 pygame.init()
 

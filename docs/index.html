@@ -94,22 +94,30 @@
 			margin-bottom: 10px;
 		}
 
-		/*botão de download */
-		.download-button {
-			background-color: #F7941D;
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 20px;
-			margin: 20px 0;
-			cursor: pointer;
-			border-radius: 4px;
-			animation: pulsar 1s;
+	/*botão de download */
+	.download-button {
+  			background-color: #F7941D;
+  			border: none;
+  			color: white;
+  			padding: 10px 20px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline-block;
+  			font-size: 20px;
+  			margin: 20px 0;
+  			cursor: pointer;
+  			border-radius: 4px;
+  			animation: pulsar 1s ease-in-out 1s infinite alternate;
 		}
 
+@keyframes pulsar {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
 		/* Efeito de scroll suave */
 		html {
 			scroll-behavior: smooth;
@@ -131,7 +139,7 @@
 			<li><a href="#avaliacao">Avaliação Heurística</a></li>
 		</ul>
 	</nav>
-	<img src="https://i.ibb.co/kXg3jN3/Design-sem-nome.png" alt= "miranda" class="pulsar" width="540" height="560">
+	<img src="https://i.ibb.co/kXg3jN3/Design-sem-nome.png" alt= "miranda" class="pulsar"  1s ease-in-out 1s infinite alternate width="540" height="560" >
     <section id="descricao" class="section-description">
 	<h2>Descrição do jogo:</h2>
 	<p>Inclua aqui algumas telas do jogo.</p>
@@ -159,11 +167,11 @@
 	</section>
 	<section id="download">
 		<p>Link para download do pacote (zip) do jogo:</p>
-		<a href="caminho/do/arquivo.zip" class="download-button">Download</a>
+		<a href="caminho/do/arquivo.zip" class="download-button pulsar">Download</a>
 	</section>
 	<section id="video">
 		<h2>Vídeo do jogo:</h2>
-		<video src="video.mp4" width="640" height="360" controls></video>
+		<iframe width="1280" height="720" src="https://www.youtube.com/embed/ioA0DwrriWM" title="PELÉ • Melhores Gols, Dribles e Passes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 	</section>
 	<section id="avaliacao">
 		<h2>Relato da avaliação heurística:</h2>

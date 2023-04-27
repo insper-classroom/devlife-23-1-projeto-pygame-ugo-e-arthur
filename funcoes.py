@@ -91,7 +91,7 @@ def tela_creditos(tela):
         
         # Desenha a tela de instruções
         tela.fill(branco)
-        titulo = fonte_titulo.render('Creditos', True, preto)
+        titulo = fonte_titulo.render('Desenvolvedores', True, preto)
         texto1 = fonte_texto.render('Arthur Meschede', True, preto)
         texto2 = fonte_texto.render('Ugo Mello De Alcantara', True, preto)
         tela.blit(titulo, (230, 20))
