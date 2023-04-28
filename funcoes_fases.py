@@ -69,10 +69,10 @@ def fase_2(tela):
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
-                if  alternativa_C.collidepoint(mouse_pos):
+                if  alternativa_D.collidepoint(mouse_pos):
                     fase_3(tela)
                     break
-                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
                     print('agua') # e aqui exibir a tela derrota
 
 
@@ -127,7 +127,7 @@ def fase_3(tela):
         
 def fase_4(tela):
     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-    pergunta =  fonte_pergunta.render('Qual foi o ano de fundacao do insper?', True, preto)
+    pergunta =  fonte_pergunta.render('Qual foi o ano de fundacao do insper/ibmec?', True, preto)
     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
     A = fonte_alternativa.render('2002', True, preto)
     B = fonte_alternativa.render('1987', True, preto)
@@ -288,9 +288,9 @@ def fase_8(tela):
         funcoes.desenha_interface_fases(tela)
         funcoes.desenha_quantidade_moedas(tela)
         tela.blit(nivel, (29, 1))
-        tela.blit(A, (165, 260))
+        tela.blit(A, (175, 255))
         tela.blit(B, (550, 255))
-        tela.blit(C, (165, 390))
+        tela.blit(C, (175, 395))
         tela.blit(D, (550, 394))
         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
         pygame.display.update()
@@ -303,7 +303,7 @@ def fase_9(tela):
     B = fonte_alternativa.render('USP', True, preto)
     C = fonte_alternativa.render('FESPSP', True, preto)
     D = fonte_alternativa.render('PUC', True, preto)
-    fonte_nivel = pygame.font.Font('Chendolle.otf',85)
+    fonte_nivel = pygame.font.Font('Chendolle.otf',75)
     nivel = fonte_nivel.render('9.', True, preto)
     while True:
         for event in pygame.event.get():
@@ -320,12 +320,11 @@ def fase_9(tela):
         tela.fill(branco)
         funcoes.desenha_interface_fases(tela)
         funcoes.desenha_quantidade_moedas(tela)
-        tela.blit(nivel, (35, 5))
-        tela.blit(nivel, (35, 5))
-        tela.blit(A, (120, 250))
-        tela.blit(B, (515, 255))
-        tela.blit(C, (155, 400))
-        tela.blit(D, (515, 390))
+        tela.blit(nivel, (25, 8))
+        tela.blit(A, (95, 255))
+        tela.blit(B, (535, 255))
+        tela.blit(C, (115, 395))
+        tela.blit(D, (535, 397))
         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
         pygame.display.update()
         
@@ -337,7 +336,7 @@ def fase_10(tela):
     B = fonte_alternativa.render('Baixo', True, preto)
     C = fonte_alternativa.render('Esquerda', True, preto)
     D = fonte_alternativa.render('Cima', True, preto)
-    fonte_nivel = pygame.font.Font('Chendolle.otf',85)
+    fonte_nivel = pygame.font.Font('Chendolle.otf',70)
     nivel = fonte_nivel.render('10.', True, preto)
     while True:
         for event in pygame.event.get():
@@ -354,19 +353,18 @@ def fase_10(tela):
         tela.fill(branco)
         funcoes.desenha_interface_fases(tela)
         funcoes.desenha_quantidade_moedas(tela)
-        tela.blit(nivel, (35, 5))
-        tela.blit(nivel, (35, 5))
-        tela.blit(A, (120, 250))
+        tela.blit(nivel, (16, 6))
+        tela.blit(A, (120, 254))
         tela.blit(B, (515, 255))
-        tela.blit(C, (155, 400))
-        tela.blit(D, (515, 390))
+        tela.blit(C, (110, 396))
+        tela.blit(D, (525, 395))
         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
         pygame.display.update()
         
 def fase_11(tela):
     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
     pergunta =  fonte_pergunta.render('Qual nao tem no 4* semestre?.', True, preto)
-    fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
+    fonte_alternativa = pygame.font.Font('Chendolle.otf',65)
     A = fonte_alternativa.render('MACHINE L.', True, preto)
     B = fonte_alternativa.render('HARDWARE', True, preto)
     C = fonte_alternativa.render('ALGORITIMO', True, preto)
@@ -388,12 +386,11 @@ def fase_11(tela):
         tela.fill(branco)
         funcoes.desenha_interface_fases(tela)
         funcoes.desenha_quantidade_moedas(tela)
-        tela.blit(nivel, (35, 5))
-        tela.blit(nivel, (35, 5))
-        tela.blit(A, (120, 250))
-        tela.blit(B, (515, 255))
-        tela.blit(C, (155, 400))
-        tela.blit(D, (515, 390))
+        tela.blit(nivel, (20, 3))
+        tela.blit(A, (100, 255))
+        tela.blit(B, (490, 255))
+        tela.blit(C, (100, 397))
+        tela.blit(D, (495, 395))
         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
         pygame.display.update()
         
