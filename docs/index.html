@@ -23,7 +23,7 @@
 		nav {
 			position: fixed;
 			top: 70px;
-			right: 0;
+			left: 0; /* Modificação: Posiciona o menu à esquerda */
 			background-color: #F7941D;
 			z-index: 1;
 			display: flex;
@@ -61,11 +61,15 @@
 			margin-top: 120px;
 			text-align: center;
 			scroll-margin-top: 70px;
+			font-family: Arial, sans-serif;
+			padding: 20px;
 		}
 
 		.section-description {
 			font-size: 24px;
 			color: #F7941D;
+			max-width: 100%;
+			margin: 0 auto;
 		}
 
 		/* Componentes */
@@ -94,30 +98,22 @@
 			margin-bottom: 10px;
 		}
 
-	/*botão de download */
-	.download-button {
-  			background-color: #F7941D;
-  			border: none;
-  			color: white;
-  			padding: 10px 20px;
-  			text-align: center;
-  			text-decoration: none;
-  			display: inline-block;
-  			font-size: 20px;
-  			margin: 20px 0;
-  			cursor: pointer;
-  			border-radius: 4px;
-  			animation: pulsar 1s ease-in-out 1s infinite alternate;
+		/*botão de download */
+		.download-button {
+			background-color: #F7941D;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 20px;
+			margin: 20px 0;
+			cursor: pointer;
+			border-radius: 4px;
+			animation: pulsar 1s;
 		}
 
-@keyframes pulsar {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
 		/* Efeito de scroll suave */
 		html {
 			scroll-behavior: smooth;
@@ -128,60 +124,61 @@
 	<div class="corner-images"></div>
 	<header>
 		<h1>SHOW DO MIRANDA</h1>
-	</header>	
-	<nav>
-		<ul>
-			<li><a href="#descricao">Descrição</a></li>
-			<li><a href="#membros">Membros</a></li>
-			<li><a href="#log">Log de Desenvolvimento</a></li>
-			<li><a href="#download">Download</a></li>
-			<li><a href="#video">Vídeo do Jogo</a></li>
-			<li><a href="#avaliacao">Avaliação Heurística</a></li>
-		</ul>
-	</nav>
-	<img src="https://i.ibb.co/kXg3jN3/Design-sem-nome.png" alt= "miranda" class="pulsar"  1s ease-in-out 1s infinite alternate width="540" height="560" >
-    <section id="descricao" class="section-description">
-	<h2>Descrição do jogo:</h2>
-	<p>Inclua aqui algumas telas do jogo.</p>
-    </section>
-	<section id="membros">
-	<h2>Membros:</h2>
-	<ul class="member-list">
-		<li>Arthur Meschede</li>
-		<li>Ugo Mello de Alcantara</li>
-	</ul>
-    </section>
-	<section id="log" class="section-log">
-	<h2>Log de desenvolvimento:</h2>
-	<p class="log-text">Aqui você pode adicionar um log de desenvolvimento, utilizando as mensagens de commit como referência.
-	</p>
-	<h2>Instruções para executar o jogo:</h2>
-	<ol>
-		<h1> Passo 1</h1>
-		<h2> Passo 2</h2>
-		<h2> Passo 3</h2>
-	</ol>
-	<h2>Relato da avaliação heurística:</h2>
-	<p>Aqui você pode adicionar um relato da avaliação heurística, descrevendo os problemas de usabilidade encontrados na primeira versão da página e as soluções desenvolvidas na versão final.</p>
-	<p>Para comparar, inclua imagens da primeira versão da página e da versão final.</p>
+	</header>
+	<img src="https://i.ibb.co/kXg3jN3/Design-sem-nome.png" alt="miranda" class="pulsar" style="max-width: 100%; height: auto; display: block; margin: 20px auto;">
+	<section id="descricao" class="section-description">
+		<h2>Descrição do jogo:</h2>
+		<p>O desafio é simples: você precisa mostrar que é mais esperto do que o nosso carismático apresentador, o Miranda. À medida que você avança no jogo, ganha moedas para provar sua inteligência e conquistar o tão desejado prêmio final.</p>
+	</section>
+	<div class="image-container">
+		<img src="docs\print.jpg" alt="Imagem 1">
+		<img src="docs\print2.jpg" alt="Imagem 2">
+	  </div>
+	<section id="video">
+		<h2>Vídeo do jogo:</h2>
+		<video src="video.mp4" width="640" height="360" controls></video>
 	</section>
 	<section id="download">
 		<p>Link para download do pacote (zip) do jogo:</p>
-		<a href="caminho/do/arquivo.zip" class="download-button pulsar">Download</a>
-	</section>
-	<section id="video">
-		<h2>Vídeo do jogo:</h2>
-		<iframe width="1280" height="720" src="https://www.youtube.com/embed/ioA0DwrriWM" title="PELÉ • Melhores Gols, Dribles e Passes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		<a href="caminho/do/arquivo.zip" class="download-button">Download</a>
 	</section>
 	<section id="avaliacao">
 		<h2>Relato da avaliação heurística:</h2>
-<p>Aqui você pode adicionar um relato da avaliação heurística, descrevendo os problemas de usabilidade encontrados na primeira versão da página e as soluções desenvolvidas na versão final.</p>
-<p>Para comparar, inclua imagens da primeira versão da página e da versão final.</p>
-
-  <div class="footer">
-        <footer> 
-        <p>Aqui você pode adicionar informações adicionais sobre o seu projeto.</p>
-    </footer>
-</div>
+		<p>Aqui você pode adicionar um relato da avaliação heurística, descrevendo os problemas de usabilidade encontrados na primeira versão da página e as soluções desenvolvidas na versão final.</p>
+		<embed src="docs\Avaliacao_Heuristicas.pdf" type="application/pdf" width="100%" height="500px" />
+	  </section>
+	</section>
+	<section id="log" class="section-log">
+		<h2>Log de desenvolvimento:</h2>
+		<p class="log-text">Aqui você pode adicionar um log de desenvolvimento, utilizando as mensagens de commit como referência.</p>
+		<h2>Instruções para executar o jogo:</h2>
+		<ol>
+			<li>Passo 1</li>
+			<li>Passo 2</li>
+			<li>Passo 3</li>
+		</ol>
+	</section>
+	<section id="membros">
+		<h2>Membros:</h2>
+		<ul class="member-list">
+			<li>Arthur Meschede</li>
+			<li>Ugo Mello de Alcantara</li>
+		</ul>
+	</section>
+	<nav>
+		<ul>
+			<li><a href="#descricao">Descrição</a></li>
+			<li><a href="#video">Vídeo do Jogo</a></li>
+			<li><a href="#download">Download</a></li>
+			<li><a href="#avaliacao">Avaliação Heurística</a></li>
+			<li><a href="#log">Log de Desenvolvimento</a></li>
+			<li><a href="#membros">Membros</a></li>
+		</ul>
+	</nav>
+	<div class="footer">
+		<footer>
+			<p>Aqui você pode adicionar informações adicionais sobre o seu projeto.</p>
+		</footer>
+	</div>
 </body>
 </html>
