@@ -5,135 +5,32 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="CSS.css">
-	<style>
-		/* Estilos para o cabeçalho */
-		header {
-			background-color: #F7941D;
-			text-align: center;
-			padding: 5px 0;
-			color: white;
-			width: 100%;
-			left: 0;
-			position: fixed;
-			top: 0;
-			z-index: 1;
-		}
-
-		/* Estilos para o menu */
-		nav {
-			position: fixed;
-			top: 70px;
-			left: 0; /* Modificação: Posiciona o menu à esquerda */
-			background-color: #F7941D;
-			z-index: 1;
-			display: flex;
-			flex-direction: column;
-			padding: 10px;
-			border-radius: 4px;
-		}
-
-		nav ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-
-		nav li {
-			margin-bottom: 10px;
-		}
-
-		nav a {
-			color: white;
-			text-decoration: none;
-			font-size: 16px;
-			font-weight: bold;
-			padding: 10px;
-			border-radius: 4px;
-			transition: background-color 0.3s ease;
-		}
-
-		nav a:hover {
-			background-color: #F36D21;
-		}
-
-		/* Estilos para as seções */
-		section {
-			margin-top: 120px;
-			text-align: center;
-			scroll-margin-top: 70px;
-			font-family: Arial, sans-serif;
-			padding: 20px;
-		}
-
-		.section-description {
-			font-size: 24px;
-			color: #F7941D;
-			max-width: 100%;
-			margin: 0 auto;
-		}
-
-		/* Componentes */
-		.member-list {
-			font-size: 20px;
-			color: #F7941D;
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-		}
-
-		.member-list li {
-			margin-bottom: 10px;
-		}
-
-		/* log de desenvolvimento */
-		.section-log {
-			font-size: 24px;
-			color: #F7941D;
-		}
-
-		.log-text {
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-			margin-bottom: 10px;
-		}
-
-		/*botão de download */
-		.download-button {
-			background-color: #F7941D;
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 20px;
-			margin: 20px 0;
-			cursor: pointer;
-			border-radius: 4px;
-			animation: pulsar 1s;
-		}
-
-		/* Efeito de scroll suave */
-		html {
-			scroll-behavior: smooth;
-		}
-	</style>
 </head>
 <body>
 	<div class="corner-images"></div>
 	<header>
+		<nav>
+			<ul>
+				<li><a href="#descricao">Descrição</a></li>
+				<li><a href="#video">Vídeo do Jogo</a></li>
+				<li><a href="#download">Download</a></li>
+				<li><a href="#avaliacao">Avaliação Heurística</a></li>
+				<li><a href="#log">Log de Desenvolvimento</a></li>
+				<li><a href="#membros">Membros</a></li>
+			</ul>
+		</nav>
 		<h1>SHOW DO MIRANDA</h1>
+		<img src="mirmir.gif" alt="">
 	</header>
-	<img src="https://i.ibb.co/kXg3jN3/Design-sem-nome.png" alt="miranda" class="pulsar" style="max-width: 100%; height: auto; display: block; margin: 20px auto;">
-	<section id="descricao" class="section-description">
+	<section id="descricao" class="section-description" style="margin: 150px;">
 		<h2>Descrição do jogo:</h2>
 		<p>O desafio é simples: você precisa mostrar que é mais esperto do que o nosso carismático apresentador, o Miranda. À medida que você avança no jogo, ganha moedas para provar sua inteligência e conquistar o tão desejado prêmio final.</p>
 	</section>
 	<div class="image-container">
-		<img src="docs\print.jpg" alt="Imagem 1">
-		<img src="docs\print2.jpg" alt="Imagem 2">
-	  </div>
+		<img src="print.jpg" alt="Imagem 1">
+		<div></div>
+		<img src="print2.jpg" alt="Imagem 2">
+	  </div>	
 	<section id="video">
 		<h2>Vídeo do jogo:</h2>
 		<video src="video.mp4" width="640" height="360" controls></video>
@@ -144,19 +41,47 @@
 	</section>
 	<section id="avaliacao">
 		<h2>Relato da avaliação heurística:</h2>
-		<p>Aqui você pode adicionar um relato da avaliação heurística, descrevendo os problemas de usabilidade encontrados na primeira versão da página e as soluções desenvolvidas na versão final.</p>
-		<embed src="docs\Avaliacao_Heuristicas.pdf" type="application/pdf" width="100%" height="500px" />
-	  </section>
+		<p>Aqui você pode ver um relato da avaliação heurística, descrevendo os problemas de usabilidade encontrados na primeira versão da página e as soluções desenvolvidas na versão final.</p>
+		<embed src="Avaliacao_Heuristicas.pdf" type="application/pdf" width="100%" height="500px" />
+	  </section>		
+	  <h2>Instruções para executar o jogo:</h2>
+			<ol>
+				<li>Passo 1: Instale o Python	
+
+					Se você ainda não tem o Python instalado em seu computador, você precisará fazer o download e instalá-lo antes de poder jogar o jogo. Você pode baixar a versão mais recente do Python em python.org.</li>
+				<li>Passo 2: Baixe o jogo
+
+					Depois de ter o Python instalado, você precisa baixar o jogo que deseja jogar. Você pode encontrar muitos jogos em Python em sites de jogos online ou em fóruns de desenvolvimento de jogos.
+					
+					</li>
+				<li>Passo 3: Descompacte o arquivo do jogo
+
+					Depois de ter baixado o jogo, descompacte o arquivo ZIP em uma pasta em seu computador.</li>
+					<li>Passo 4: Execute o jogo
+
+						Para executar o jogo, abra o prompt de comando do Windows e navegue até a pasta onde o arquivo do jogo está localizado. Depois, digite o seguinte comando:
+						
+						python jogo.py
+						</li>
+					<li>Passo 5: Jogue o jogo
+
+						Agora que o jogo está sendo executado, siga as instruções na tela para jogá-lo. Dependendo do jogo, você pode precisar usar o teclado e/ou mouse para controlar seu personagem.
+						
+						</li>
+			</ol>
 	</section>
 	<section id="log" class="section-log">
-		<h2>Log de desenvolvimento:</h2>
-		<p class="log-text">Aqui você pode adicionar um log de desenvolvimento, utilizando as mensagens de commit como referência.</p>
-		<h2>Instruções para executar o jogo:</h2>
-		<ol>
-			<li>Passo 1</li>
-			<li>Passo 2</li>
-			<li>Passo 3</li>
-		</ol>
+
+			<h2>Log de desenvolvimento:</h2>
+			<div class="log-container">
+				<div class="log-box">
+					<textarea rows="4" cols="50" placeholder="Escreva aqui o seu log..."></textarea>
+				</div>
+				<div class="log-box">
+					<textarea rows="4" cols="50" placeholder="Escreva aqui o seu log..."></textarea>
+				</div>
+			</div>
+
 	</section>
 	<section id="membros">
 		<h2>Membros:</h2>
@@ -165,16 +90,7 @@
 			<li>Ugo Mello de Alcantara</li>
 		</ul>
 	</section>
-	<nav>
-		<ul>
-			<li><a href="#descricao">Descrição</a></li>
-			<li><a href="#video">Vídeo do Jogo</a></li>
-			<li><a href="#download">Download</a></li>
-			<li><a href="#avaliacao">Avaliação Heurística</a></li>
-			<li><a href="#log">Log de Desenvolvimento</a></li>
-			<li><a href="#membros">Membros</a></li>
-		</ul>
-	</nav>
+	
 	<div class="footer">
 		<footer>
 			<p>Aqui você pode adicionar informações adicionais sobre o seu projeto.</p>
