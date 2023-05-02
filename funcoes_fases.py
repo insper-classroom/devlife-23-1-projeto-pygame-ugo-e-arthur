@@ -1,4 +1,4 @@
-import pygame, funcoes 
+import pygame, funcoes, Main_Menu
 
 # --------cores----------------
 branco = (255, 255, 255)
@@ -558,7 +558,7 @@ def desenha_tela_vitoria(tela):
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if voltar.collidepoint(mouse_pos):
-                    return
+                    Main_Menu.jogo()
         tela.fill(branco)
         titulo = fonte_titulo.render('Voce Ganhou!!!!', True, preto)
 

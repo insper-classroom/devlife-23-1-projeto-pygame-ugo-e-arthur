@@ -1,4 +1,4 @@
-import pygame
+import pygame, Main_Menu
 
 # desenha a tela de instrucoes
 def tela_instrucoes(tela):
@@ -179,7 +179,7 @@ def derrota_0(tela):
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if voltar.collidepoint(mouse_pos):
-                    return
+                    Main_Menu.jogo()
         tela.fill(branco)
         titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
 
@@ -216,7 +216,7 @@ def derrota_1(tela):
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if voltar.collidepoint(mouse_pos):
-                    return
+                    Main_Menu.jogo()
         tela.fill(branco)
         titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
 
@@ -252,7 +252,7 @@ def derrota_2(tela):
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if voltar.collidepoint(mouse_pos):
-                    return
+                    Main_Menu.jogo()
         tela.fill(branco)
         titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
 
