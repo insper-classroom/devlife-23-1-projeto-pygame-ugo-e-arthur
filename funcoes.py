@@ -145,11 +145,129 @@ def desenha_interface_fases(tela):
     tela.blit(xzinho,(745, 22))
 
 
-def desenha_quantidade_moedas(tela):
-    i = 0
+def desenha_quantidade_moedas_0(tela):
     fonte = pygame.font.Font('Chendolle.otf', (60))
-    moeda = fonte.render(f'{i}', True, (0, 0, 0))
+    moeda = fonte.render('0', True, (0, 0, 0))
     tela.blit(moeda, (708, 5))
+
+def desenha_quantidade_moedas_1(tela):
+    fonte = pygame.font.Font('Chendolle.otf', (60))
+    moeda = fonte.render('1', True, (0, 0, 0))
+    tela.blit(moeda, (718, 4))
+
+def desenha_quantidade_moedas_2(tela):
+    fonte = pygame.font.Font('Chendolle.otf', (60))
+    moeda = fonte.render('2', True, (0, 0, 0))
+    tela.blit(moeda, (710, 0))
+
+def derrota_0(tela):
+    branco = (255, 255, 255)
+    preto = (0, 0, 0)
+    laranja = (230, 115, 0)
+    laranja_escuro = (200, 100, 0)
+    laranja_claro = (255, 140, 0)
+    fonte_titulo = pygame.font.Font('Chendolle.otf', 90)
+    fonte_texto = pygame.font.Font('Chendolle.otf', 30)
+    seta = pygame.image.load('seta-esquerda.png')
+    seta = pygame.transform.scale(seta, (50, 50))
+    voltar = pygame.Rect(20, 530, 150, 60)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+                if voltar.collidepoint(mouse_pos):
+                    return
+        tela.fill(branco)
+        titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
+
+        texto5 = fonte_texto.render('Tome seu premio: 0', True, preto)
+        tela.blit(titulo, (230, 20))
+        tela.blit(texto5, (160, 350))
+        # interface Retangulo
+        pygame.draw.rect(tela, laranja, voltar)
+        pygame.draw.rect(tela, laranja_escuro, voltar, 5)
+        pygame.draw.rect(tela, laranja_claro, voltar.inflate(-10, -10))
+        tela.blit(seta, (65, 535))
+
+        
+        # Atualiza a tela
+        pygame.display.update()
+
+
+def derrota_1(tela):
+    branco = (255, 255, 255)
+    preto = (0, 0, 0)
+    laranja = (230, 115, 0)
+    laranja_escuro = (200, 100, 0)
+    laranja_claro = (255, 140, 0)
+    fonte_titulo = pygame.font.Font('Chendolle.otf', 90)
+    fonte_texto = pygame.font.Font('Chendolle.otf', 30)
+    seta = pygame.image.load('seta-esquerda.png')
+    seta = pygame.transform.scale(seta, (50, 50))
+    voltar = pygame.Rect(20, 530, 150, 60)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+                if voltar.collidepoint(mouse_pos):
+                    return
+        tela.fill(branco)
+        titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
+
+        texto5 = fonte_texto.render('Tome seu premio: 1', True, preto)
+        tela.blit(titulo, (230, 20))
+        tela.blit(texto5, (160, 350))
+        # interface Retangulo
+        pygame.draw.rect(tela, laranja, voltar)
+        pygame.draw.rect(tela, laranja_escuro, voltar, 5)
+        pygame.draw.rect(tela, laranja_claro, voltar.inflate(-10, -10))
+        tela.blit(seta, (65, 535))
+
+        
+        # Atualiza a tela
+        pygame.display.update()
+
+def derrota_2(tela):
+    branco = (255, 255, 255)
+    preto = (0, 0, 0)
+    laranja = (230, 115, 0)
+    laranja_escuro = (200, 100, 0)
+    laranja_claro = (255, 140, 0)
+    fonte_titulo = pygame.font.Font('Chendolle.otf', 90)
+    fonte_texto = pygame.font.Font('Chendolle.otf', 30)
+    seta = pygame.image.load('seta-esquerda.png')
+    seta = pygame.transform.scale(seta, (50, 50))
+    voltar = pygame.Rect(20, 530, 150, 60)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+                if voltar.collidepoint(mouse_pos):
+                    return
+        tela.fill(branco)
+        titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
+
+        texto5 = fonte_texto.render('Tome seu premio: 2', True, preto)
+        tela.blit(titulo, (230, 20))
+        tela.blit(texto5, (160, 350))
+        # interface Retangulo
+        pygame.draw.rect(tela, laranja, voltar)
+        pygame.draw.rect(tela, laranja_escuro, voltar, 5)
+        pygame.draw.rect(tela, laranja_claro, voltar.inflate(-10, -10))
+        tela.blit(seta, (65, 535))
+
+        
+        # Atualiza a tela
+        pygame.display.update()
 
 
  
