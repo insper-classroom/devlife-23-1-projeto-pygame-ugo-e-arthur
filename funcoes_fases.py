@@ -588,12 +588,21 @@ def desenha_tela_vitoria(tela):
     laranja_escuro = (200, 100, 0)
     laranja_claro = (255, 140, 0)
     fonte_titulo = pygame.font.Font('Chendolle.otf', 90)
-    fonte_texto = pygame.font.Font('Chendolle.otf', 30)
+    fonte_texto = pygame.font.Font('Chendolle.otf', 100)
+    fonte_quantidade = pygame.font.Font('Chendolle.otf', 150)
     seta = pygame.image.load('seta-esquerda.png')
     seta = pygame.transform.scale(seta, (50, 50))
+    coin = pygame.image.load('MCoin.png')
+    coin = pygame.transform.scale(coin, (200, 200))
     voltar = pygame.Rect(20, 530, 150, 60)
     while True:
         for event in pygame.event.get():
+            mouse_pos = pygame.mouse.get_pos()
+            if voltar.collidepoint(mouse_pos):
+                voltar = pygame.Rect(10, 520, 170, 80)
+            else:
+                voltar = pygame.Rect(20, 530, 150, 60)
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -603,10 +612,12 @@ def desenha_tela_vitoria(tela):
                     Main_Menu.jogo()
         tela.fill(branco)
         titulo = fonte_titulo.render('Voce Ganhou!!!!', True, preto)
-
-        texto5 = fonte_texto.render('Tome seu premio', True, preto)
-        tela.blit(titulo, (230, 20))
-        tela.blit(texto5, (160, 350))
+        premio = fonte_texto.render('Tome seu premio:', True, preto)
+        quantidade = fonte_quantidade.render('3x', True, preto)
+        tela.blit(titulo, (170, 20))
+        tela.blit(premio, (100, 150))
+        tela.blit(quantidade, (300, 280))
+        tela.blit(coin, (395, 270))
         # interface Retangulo
         pygame.draw.rect(tela, laranja, voltar)
         pygame.draw.rect(tela, laranja_escuro, voltar, 5)

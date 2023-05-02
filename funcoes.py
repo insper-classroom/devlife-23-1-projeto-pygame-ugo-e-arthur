@@ -16,6 +16,12 @@ def tela_instrucoes(tela):
 # -----------imagem--------------------------------------
     seta = pygame.image.load('seta-esquerda.png')
     seta = pygame.transform.scale(seta, (50, 50))
+    toshi = pygame.image.load('Andrew-Kurauchi-2 (1).png')
+    toshi = pygame.transform.scale(toshi, (150, 150))
+    toshi_descolado = pygame.image.load('seta-esquerda.png')
+    toshi_descolado = pygame.transform.scale(toshi_descolado, (150, 150))
+    intervalos_animacao_toshi = 1000
+    imagem_atual = 1  # variavel para controlar qual imagem sera exibida na animacao
 # -----------imagem--------------------------------------
 
     # Define o retângulo do botão de voltar
@@ -38,6 +44,13 @@ def tela_instrucoes(tela):
                 if voltar.collidepoint(mouse_pos):
                     return  # Encerra a função e volta para a tela inicial
         # Desenha a tela de instruções
+            if imagem_atual == 1:
+                tela.blit(toshi, (610, 410))
+                imagem_atual = 2
+            else:
+                tela.blit(toshi_descolado, (610, 410))
+                imagem_atual = 1
+
         tela.fill(branco)
         titulo = fonte_titulo.render('Instruções', True, preto)
         texto1 = fonte_texto.render('Bem-vindos ao Show do Miranda!!!', True, preto)
@@ -53,6 +66,7 @@ def tela_instrucoes(tela):
         tela.blit(texto4, (60, 300))
         tela.blit(texto5, (160, 350))
         tela.blit(texto6, (450, 500))
+        tela.blit(toshi, (610, 410))
         # interface Retangulo
         pygame.draw.rect(tela, laranja, voltar)
         pygame.draw.rect(tela, laranja_escuro, voltar, 5)
@@ -62,6 +76,8 @@ def tela_instrucoes(tela):
         
         # Atualiza a tela
         pygame.display.update()
+
+        pygame.time.wait(intervalos_animacao_toshi)
 
 # desenha a tela de creditos
 def tela_creditos(tela):
@@ -199,9 +215,12 @@ def derrota_0(tela):
     laranja_escuro = (200, 100, 0)
     laranja_claro = (255, 140, 0)
     fonte_titulo = pygame.font.Font('Chendolle.otf', 90)
-    fonte_texto = pygame.font.Font('Chendolle.otf', 30)
+    fonte_texto = pygame.font.Font('Chendolle.otf', 100)
+    fonte_quantidade = pygame.font.Font('Chendolle.otf', 150)
     seta = pygame.image.load('seta-esquerda.png')
     seta = pygame.transform.scale(seta, (50, 50))
+    coin = pygame.image.load('MCoin.png')
+    coin = pygame.transform.scale(coin, (200, 200))
     voltar = pygame.Rect(20, 530, 150, 60)
     while True:
         for event in pygame.event.get():
@@ -220,10 +239,12 @@ def derrota_0(tela):
                     Main_Menu.jogo()
         tela.fill(branco)
         titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
-
-        texto5 = fonte_texto.render('Tome seu premio: 0', True, preto)
-        tela.blit(titulo, (230, 20))
-        tela.blit(texto5, (160, 350))
+        premio = fonte_texto.render('Tome seu premio:', True, preto)
+        quantidade = fonte_quantidade.render('0x', True, preto)
+        tela.blit(titulo, (170, 20))
+        tela.blit(premio, (100, 150))
+        tela.blit(quantidade, (300, 280))
+        tela.blit(coin, (415, 255))
         # interface Retangulo
         pygame.draw.rect(tela, laranja, voltar)
         pygame.draw.rect(tela, laranja_escuro, voltar, 5)
@@ -242,9 +263,12 @@ def derrota_1(tela):
     laranja_escuro = (200, 100, 0)
     laranja_claro = (255, 140, 0)
     fonte_titulo = pygame.font.Font('Chendolle.otf', 90)
-    fonte_texto = pygame.font.Font('Chendolle.otf', 30)
+    fonte_texto = pygame.font.Font('Chendolle.otf', 100)
+    fonte_quantidade = pygame.font.Font('Chendolle.otf', 150)
     seta = pygame.image.load('seta-esquerda.png')
     seta = pygame.transform.scale(seta, (50, 50))
+    coin = pygame.image.load('MCoin.png')
+    coin = pygame.transform.scale(coin, (200, 200))
     voltar = pygame.Rect(20, 530, 150, 60)
     while True:
         for event in pygame.event.get():
@@ -263,10 +287,12 @@ def derrota_1(tela):
                     Main_Menu.jogo()
         tela.fill(branco)
         titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
-
-        texto5 = fonte_texto.render('Tome seu premio: 1', True, preto)
-        tela.blit(titulo, (230, 20))
-        tela.blit(texto5, (160, 350))
+        premio = fonte_texto.render('Tome seu premio:', True, preto)
+        quantidade = fonte_quantidade.render('1x', True, preto)
+        tela.blit(titulo, (170, 20))
+        tela.blit(premio, (100, 150))
+        tela.blit(quantidade, (300, 280))
+        tela.blit(coin, (390, 255))
         # interface Retangulo
         pygame.draw.rect(tela, laranja, voltar)
         pygame.draw.rect(tela, laranja_escuro, voltar, 5)
@@ -284,9 +310,12 @@ def derrota_2(tela):
     laranja_escuro = (200, 100, 0)
     laranja_claro = (255, 140, 0)
     fonte_titulo = pygame.font.Font('Chendolle.otf', 90)
-    fonte_texto = pygame.font.Font('Chendolle.otf', 30)
+    fonte_texto = pygame.font.Font('Chendolle.otf', 100)
+    fonte_quantidade = pygame.font.Font('Chendolle.otf', 150)
     seta = pygame.image.load('seta-esquerda.png')
     seta = pygame.transform.scale(seta, (50, 50))
+    coin = pygame.image.load('MCoin.png')
+    coin = pygame.transform.scale(coin, (200, 200))
     voltar = pygame.Rect(20, 530, 150, 60)
     while True:
         for event in pygame.event.get():
@@ -305,10 +334,12 @@ def derrota_2(tela):
                     Main_Menu.jogo()
         tela.fill(branco)
         titulo = fonte_titulo.render('Voce Perdeu!!!!', True, preto)
-
-        texto5 = fonte_texto.render('Tome seu premio: 2', True, preto)
-        tela.blit(titulo, (230, 20))
-        tela.blit(texto5, (160, 350))
+        premio = fonte_texto.render('Tome seu premio:', True, preto)
+        quantidade = fonte_quantidade.render('2x', True, preto)
+        tela.blit(titulo, (170, 20))
+        tela.blit(premio, (100, 150))
+        tela.blit(quantidade, (300, 280))
+        tela.blit(coin, (395, 270))
         # interface Retangulo
         pygame.draw.rect(tela, laranja, voltar)
         pygame.draw.rect(tela, laranja_escuro, voltar, 5)
