@@ -58,8 +58,8 @@ def fase_2(tela):
     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
     A = fonte_alternativa.render('2023', True, preto)
     B = fonte_alternativa.render('2024', True, preto)
-    C = fonte_alternativa.render('2025', True, preto)
-    D = fonte_alternativa.render('2026', True, preto)
+    C = fonte_alternativa.render('2026', True, preto)
+    D = fonte_alternativa.render('2025', True, preto)
     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
     nivel = fonte_nivel.render('2.', True, preto)
     while True:
