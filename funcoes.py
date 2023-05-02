@@ -31,21 +31,22 @@ def tela_instrucoes(tela):
                 mouse_pos = event.pos
                 if voltar.collidepoint(mouse_pos):
                     return  # Encerra a função e volta para a tela inicial
-        
         # Desenha a tela de instruções
         tela.fill(branco)
         titulo = fonte_titulo.render('Instruções', True, preto)
         texto1 = fonte_texto.render('Bem-vindos ao Show do Miranda!!!', True, preto)
         texto2 = fonte_texto.render('Você deve responder corretamente as perguntas para ganhar o prêmio', True, preto)
-        texto3 = fonte_texto.render('Cada pergunta possui 4 alternativas, apenas uma delas esta correta', True, preto)
-        texto4 = fonte_texto.render('Use o mouse para selecionar a alternativa que você acha correta', True, preto)
+        texto3 = fonte_texto.render('Nosso jogo possui 15 perguntas! Com foco no cotidiano da Turma', True, preto)
+        texto4 = fonte_texto.render('A cada 5 perguntas acertadas, o jogador ganha 1 Miranca Coin', True, preto)
         texto5 = fonte_texto.render('Clique no botão "Jogar" para começar o jogo', True, preto)
+        texto6 = fonte_texto.render('Boa sorte!!!', True, preto)
         tela.blit(titulo, (230, 20))
         tela.blit(texto1, (230, 150))
         tela.blit(texto2, (25, 200))
-        tela.blit(texto3, (30, 250))
-        tela.blit(texto4, (50, 300))
+        tela.blit(texto3, (45, 250))
+        tela.blit(texto4, (60, 300))
         tela.blit(texto5, (160, 350))
+        tela.blit(texto6, (450, 500))
         # interface Retangulo
         pygame.draw.rect(tela, laranja, voltar)
         pygame.draw.rect(tela, laranja_escuro, voltar, 5)
@@ -94,9 +95,10 @@ def tela_creditos(tela):
         titulo = fonte_titulo.render('Desenvolvedores', True, preto)
         texto1 = fonte_texto.render('Arthur Meschede', True, preto)
         texto2 = fonte_texto.render('Ugo Mello De Alcantara', True, preto)
-        tela.blit(titulo, (230, 20))
-        tela.blit(texto1, (230, 150))
-        tela.blit(texto2, (230, 200))
+
+        tela.blit(titulo, (155, 20))
+        tela.blit(texto1, (310, 150))
+        tela.blit(texto2, (280, 200))
        # interface Retangulo
         pygame.draw.rect(tela, laranja, voltar)
         pygame.draw.rect(tela, laranja_escuro, voltar, 5)
