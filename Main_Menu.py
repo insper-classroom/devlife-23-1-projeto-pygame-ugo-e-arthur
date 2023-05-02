@@ -4,6 +4,11 @@ import funcoes_fases
 
 def jogo():
     pygame.init()
+    pygame.mixer.pre_init()
+
+    pygame.mixer.music.load('docs/boss-133663.mp3')
+    pygame.mixer.music.set_volume(0.4)
+    pygame.mixer.music.play(loops=-1)
 
     # Define as dimensões da tela
     largura_tela = 800
@@ -73,14 +78,24 @@ def jogo():
         tela.fill(branco)
     # Desenha os retângulos de seleção com contorno laranja escuro
         pygame.draw.rect(tela, laranja, jogar)
+
         pygame.draw.rect(tela, laranja_escuro, jogar, 5)
-        pygame.draw.rect(tela, laranja_claro, jogar.inflate(-10, -10))
+        if jogar.collidepoint(pygame.mouse.get_pos()):
+            pygame.draw.rect(tela, (0, 255, 0), jogar.inflate(-10, -10))
+        else:
+            pygame.draw.rect(tela, laranja_claro, jogar.inflate(-10, -10))
         pygame.draw.rect(tela, laranja, instrucoes)
         pygame.draw.rect(tela, laranja_escuro, instrucoes, 5)
-        pygame.draw.rect(tela, laranja_claro, instrucoes.inflate(-10, -10))
+        if instrucoes.collidepoint(pygame.mouse.get_pos()):
+            pygame.draw.rect(tela, (0, 255, 0), instrucoes.inflate(-10, -10))
+        else:
+            pygame.draw.rect(tela, laranja_claro, instrucoes.inflate(-10, -10))
         pygame.draw.rect(tela, laranja, creditos)
         pygame.draw.rect(tela, laranja_escuro, creditos, 5)
-        pygame.draw.rect(tela, laranja_claro, creditos.inflate(-10, -10))
+        if creditos.collidepoint(pygame.mouse.get_pos()):
+            pygame.draw.rect(tela, (0, 255, 0), creditos.inflate(-10, -10))
+        else:
+            pygame.draw.rect(tela, laranja_claro, creditos.inflate(-10, -10))
     # Desenha animacao do miranda
         if imagem_atual == 1:
             tela.blit(cara, (660, 8))

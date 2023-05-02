@@ -1,4 +1,4 @@
-import pygame, Main_Menu
+import pygame, Main_Menu,pygame.mixer
 
 # desenha a tela de instrucoes
 def tela_instrucoes(tela):
@@ -24,6 +24,12 @@ def tela_instrucoes(tela):
     # Loop da tela de instruções
     while True:
         for event in pygame.event.get():
+            mouse_pos = pygame.mouse.get_pos()
+            if voltar.collidepoint(mouse_pos):
+                voltar = pygame.Rect(10, 520, 170, 80)
+            else:
+                voltar = pygame.Rect(20, 530, 150, 60)
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -126,18 +132,42 @@ def desenha_interface_fases(tela):
     fonte = pygame.font.Font('Chendolle.otf', 40)
     xzinho = fonte.render('x', True, preto)
     tela.fill(branco)
+
+    a_cor = laranja_claro
+    if alternativa_A.collidepoint(pygame.mouse.get_pos()):
+        a_cor = (0, 255, 0)
+
+    b_cor = laranja_claro
+    if alternativa_B.collidepoint(pygame.mouse.get_pos()):
+        b_cor = (0, 255, 0)
+
+    c_cor = laranja_claro
+    if alternativa_C.collidepoint(pygame.mouse.get_pos()):
+        c_cor = (0, 255, 0)
+
+    d_cor = laranja_claro
+    if alternativa_D.collidepoint(pygame.mouse.get_pos()):
+        d_cor = (0, 255, 0)
+
+
+
     pygame.draw.rect(tela, laranja, alternativa_A)
     pygame.draw.rect(tela, laranja_escuro, alternativa_A, 5)
-    pygame.draw.rect(tela, laranja_claro, alternativa_A.inflate(-10, -10))
+    pygame.draw.rect(tela, a_cor, alternativa_A.inflate(-10, -10))
+
+
     pygame.draw.rect(tela, laranja, alternativa_B)
     pygame.draw.rect(tela, laranja_escuro, alternativa_B, 5)
-    pygame.draw.rect(tela, laranja_claro, alternativa_B.inflate(-10, -10))
+    pygame.draw.rect(tela, b_cor, alternativa_B.inflate(-10, -10))
+
     pygame.draw.rect(tela, laranja, alternativa_C)
     pygame.draw.rect(tela, laranja_escuro, alternativa_C, 5)
-    pygame.draw.rect(tela, laranja_claro, alternativa_C.inflate(-10, -10))
+    pygame.draw.rect(tela, c_cor, alternativa_C.inflate(-10, -10))
+
     pygame.draw.rect(tela, laranja, alternativa_D)
     pygame.draw.rect(tela, laranja_escuro, alternativa_D, 5)
-    pygame.draw.rect(tela, laranja_claro, alternativa_D.inflate(-10, -10))
+    pygame.draw.rect(tela, d_cor, alternativa_D.inflate(-10, -10))
+
     pygame.draw.rect(tela, laranja, retangulo)
     pygame.draw.rect(tela, laranja_escuro, retangulo, 5)
     pygame.draw.rect(tela, laranja_claro, retangulo.inflate(-10, -10))
@@ -175,6 +205,12 @@ def derrota_0(tela):
     voltar = pygame.Rect(20, 530, 150, 60)
     while True:
         for event in pygame.event.get():
+            mouse_pos = pygame.mouse.get_pos()
+            if voltar.collidepoint(mouse_pos):
+                voltar = pygame.Rect(10, 520, 170, 80)
+            else:
+                voltar = pygame.Rect(20, 530, 150, 60)
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -212,6 +248,12 @@ def derrota_1(tela):
     voltar = pygame.Rect(20, 530, 150, 60)
     while True:
         for event in pygame.event.get():
+            mouse_pos = pygame.mouse.get_pos()
+            if voltar.collidepoint(mouse_pos):
+                voltar = pygame.Rect(10, 520, 170, 80)
+            else:
+                voltar = pygame.Rect(20, 530, 150, 60)
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -248,6 +290,12 @@ def derrota_2(tela):
     voltar = pygame.Rect(20, 530, 150, 60)
     while True:
         for event in pygame.event.get():
+            mouse_pos = pygame.mouse.get_pos()
+            if voltar.collidepoint(mouse_pos):
+                voltar = pygame.Rect(10, 520, 170, 80)
+            else:
+                voltar = pygame.Rect(20, 530, 150, 60)
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -270,8 +318,3 @@ def derrota_2(tela):
         
         # Atualiza a tela
         pygame.display.update()
-
-
- 
-
-

@@ -1,5 +1,13 @@
 import pygame, funcoes, Main_Menu
 
+#--------sons-----------
+pygame.mixer.init()
+som_errou = pygame.mixer.Sound('./docs/buzzer-or-wrong-answer-20582.mp3')
+som_errou.set_volume(0.5)
+som_acertou = pygame.mixer.Sound('./docs/correct-6033.wav')
+som_acertou.set_volume(0.5)
+
+
 # --------cores----------------
 branco = (255, 255, 255)
 preto = (0, 0, 0)
@@ -7,6 +15,7 @@ laranja = (230, 115, 0)
 laranja_escuro = (200, 100, 0)
 laranja_claro = (255, 140, 0)
 roxo = (147,112,219)
+
 # --------alternativas------------------------
 alternativa_A = pygame.Rect(60, 250, 310, 80)
 alternativa_B = pygame.Rect(430, 250, 310, 80)
@@ -33,14 +42,16 @@ def fase_1(tela):
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
+                    
                 if circulo_laranja.collidepoint(mouse_pos) or circulo_roxo.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_2(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_0(tela)
 
-
-
+  
         tela.fill(branco)
         funcoes.desenha_interface_fases(tela)
         funcoes.desenha_quantidade_moedas_0(tela)
@@ -70,9 +81,11 @@ def fase_2(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_D.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_3(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_0(tela)
 
 
@@ -107,9 +120,11 @@ def fase_3(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_A.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_4(tela)
                     break
                 if alternativa_C.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_0(tela)
 
 
@@ -127,7 +142,7 @@ def fase_3(tela):
         
 def fase_4(tela):
     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-    pergunta =  fonte_pergunta.render('Qual foi o ano de fundacao do insper/ibmec?', True, preto)
+    pergunta =  fonte_pergunta.render('Qual foi o ano de fundacao do ibmec?', True, preto)
     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
     A = fonte_alternativa.render('2002', True, preto)
     B = fonte_alternativa.render('1987', True, preto)
@@ -143,9 +158,11 @@ def fase_4(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_B.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_5(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_0(tela)
 
         tela.fill(branco)
@@ -177,9 +194,11 @@ def fase_5(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_C.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_6(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_0(tela)
 
 
@@ -213,9 +232,11 @@ def fase_6(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_D.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_7(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_1(tela)
 
         tela.fill(branco)
@@ -247,9 +268,11 @@ def fase_7(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if circulo_laranja.collidepoint(mouse_pos) or circulo_roxo.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_8(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_1(tela)
 
         tela.fill(branco)
@@ -281,9 +304,11 @@ def fase_8(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_A.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_9(tela)
                     break
                 if alternativa_C.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_1(tela)
 
         tela.fill(branco)
@@ -315,9 +340,11 @@ def fase_9(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_B.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_10(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_1(tela)
 
         tela.fill(branco)
@@ -348,10 +375,13 @@ def fase_10(tela):
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
+                    
                 if  alternativa_C.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_11(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_1(tela)
 
         tela.fill(branco)
@@ -383,9 +413,11 @@ def fase_11(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_D.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_12(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_2(tela)
 
         tela.fill(branco)
@@ -417,9 +449,11 @@ def fase_12(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_C.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_13(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_2(tela)
 
         tela.fill(branco)
@@ -450,10 +484,14 @@ def fase_13(tela):
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
+                    
                 if  alternativa_A.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_14(tela)
+                    
                     break
                 if alternativa_C.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_2(tela)
 
         tela.fill(branco)
@@ -485,9 +523,11 @@ def fase_14(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_D.collidepoint(mouse_pos):
+                    som_acertou.play()
                     fase_15(tela)
                     break
                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_2(tela)
 
 
@@ -521,9 +561,11 @@ def fase_15(tela):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 if  alternativa_A.collidepoint(mouse_pos):
+                    som_acertou.play()
                     desenha_tela_vitoria(tela)
                     break
                 if alternativa_D.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                    som_errou.play()
                     funcoes.derrota_2(tela)
 
 
@@ -574,40 +616,3 @@ def desenha_tela_vitoria(tela):
         
         # Atualiza a tela
         pygame.display.update()
-# def fase_3(tela):
-#     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-#     pergunta =  fonte_pergunta.render('Qual faculdade a grazi nao estudou?.', True, preto)
-#     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
-#     A = fonte_alternativa.render('UNICAMP', True, preto)
-#     B = fonte_alternativa.render('USP', True, preto)
-#     C = fonte_alternativa.render('U.OXFORD', True, preto)
-#     D = fonte_alternativa.render('Federal PE', True, preto)
-#     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
-#     nivel = fonte_nivel.render('3.', True, preto)
-#     while True:
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 pygame.quit()
-#                 quit()
-#             if event.type == pygame.MOUSEBUTTONDOWN:
-#                 mouse_pos = event.pos
-#                 if  alternativa_C.collidepoint(mouse_pos):
-#                     fase_3(tela)
-#                     break
-#                 if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
-#                     print('agua') # e aqui exibir a tela derrota
-
-
-
-#         tela.fill(branco)
-#         funcoes.desenha_interface_fases(tela)
-#         funcoes.desenha_quantidade_moedas(tela)
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(nivel, (35, 5))
-#         tela.blit(A, (120, 250))
-#         tela.blit(B, (515, 255))
-#         tela.blit(C, (155, 400))
-#         tela.blit(D, (515, 390))
-#         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
-#         pygame.display.update()
-        
