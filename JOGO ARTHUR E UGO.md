@@ -22,4 +22,7 @@ Fontes e imagens utilizadas:
 [Fotos Professores](https://www.insper.edu.br/graduacao/ciencia-da-computacao/)
 [PNG Seta](https://www.flaticon.com/br/icone-gratis/seta-esquerda_7772089?term=seta&page=4&position=89&origin=tag&related_id=7772089)
 [Fonte Quiz](https://www.dafont.com/chendolle.font)
+[PNG oculos](https://pt.pngtree.com/freepng/pixel-8-bit-black-glasses_7903017.html)
+[PNG joia](https://imagenspng.com/download/emoji-joinha-png-imagem-com-fundo-removido-transparente-gratis-para-baixar/)
+
 
