@@ -397,12 +397,12 @@ def fase_10(tela):
         
 def fase_11(tela):
     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-    pergunta =  fonte_pergunta.render('Qual nao tem no 4* semestre?', True, preto)
+    pergunta =  fonte_pergunta.render('Qual das materias nao esta no curso de Ccomp?', True, preto)
     fonte_alternativa = pygame.font.Font('Chendolle.otf',60)
-    A = fonte_alternativa.render('MACHINE L.', True, preto)
+    A = fonte_alternativa.render('ALGORITIMO', True, preto)
     B = fonte_alternativa.render('HARDWARE', True, preto)
-    C = fonte_alternativa.render('ALGORITIMO', True, preto)
-    D = fonte_alternativa.render('DEVLIFE', True, preto)
+    C = fonte_alternativa.render('Cyberlearning', True, preto)
+    D = fonte_alternativa.render('MACHINE L', True, preto)
     fonte_nivel = pygame.font.Font('Chendolle.otf',85)
     nivel = fonte_nivel.render('11.', True, preto)
     while True:
@@ -412,11 +412,11 @@ def fase_11(tela):
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
-                if  alternativa_D.collidepoint(mouse_pos):
+                if  alternativa_C.collidepoint(mouse_pos):
                     som_acertou.play()
                     fase_12(tela)
                     break
-                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
                     som_errou.play()
                     funcoes.derrota_2(tela)
 
@@ -424,21 +424,21 @@ def fase_11(tela):
         funcoes.desenha_interface_fases(tela)
         funcoes.desenha_quantidade_moedas_2(tela)
         tela.blit(nivel, (20, 3))
-        tela.blit(A, (90, 260))
-        tela.blit(B, (470, 260))
-        tela.blit(C, (75, 402))
-        tela.blit(D, (495, 395))
+        tela.blit(A, (83, 260))
+        tela.blit(B, (465, 260))
+        tela.blit(C, (70, 402))
+        tela.blit(D, (460, 400))
         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
         pygame.display.update()
         
 def fase_12(tela):
     fonte_pergunta = pygame.font.Font('Chendolle.otf',45)
-    pergunta =  fonte_pergunta.render('Qual a linguagem mais popular?', True, preto)
-    fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
-    A = fonte_alternativa.render('C', True, preto)
-    B = fonte_alternativa.render('JAVA', True, preto)
-    C = fonte_alternativa.render('PYTHON', True, preto)
-    D = fonte_alternativa.render('PHP', True, preto)
+    pergunta =  fonte_pergunta.render('Qual desses nao fundou o insper?', True, preto)
+    fonte_alternativa = pygame.font.Font('Chendolle.otf',40)
+    A = fonte_alternativa.render('Claudio Haddad', True, preto)
+    B = fonte_alternativa.render('Jorge Paulo Lemann', True, preto)
+    C = fonte_alternativa.render('Carlos Sicupira', True, preto)
+    D = fonte_alternativa.render('Marcelo Zanutim', True, preto)
     fonte_nivel = pygame.font.Font('Chendolle.otf',75)
     nivel = fonte_nivel.render('12.', True, preto)
     while True:
@@ -448,11 +448,11 @@ def fase_12(tela):
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
-                if  alternativa_C.collidepoint(mouse_pos):
+                if  alternativa_D.collidepoint(mouse_pos):
                     som_acertou.play()
                     fase_13(tela)
                     break
-                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_D.collidepoint(mouse_pos):
+                if alternativa_A.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
                     som_errou.play()
                     funcoes.derrota_2(tela)
 
@@ -460,10 +460,10 @@ def fase_12(tela):
         funcoes.desenha_interface_fases(tela)
         funcoes.desenha_quantidade_moedas_2(tela)
         tela.blit(nivel, (20, 2))
-        tela.blit(A, (170, 253))
-        tela.blit(B, (515, 255))
-        tela.blit(C, (110, 395))
-        tela.blit(D, (520, 395))
+        tela.blit(A, (99, 270))
+        tela.blit(B, (442, 268))
+        tela.blit(C, (97, 407))
+        tela.blit(D, (465, 405))
         tela.blit(pergunta, (400 - pergunta.get_width() // 2, 100))
         pygame.display.update()
         
@@ -545,12 +545,12 @@ def fase_14(tela):
 
 def fase_15(tela):
     fonte_pergunta = pygame.font.Font('Chendolle.otf',40)
-    pergunta =  fonte_pergunta.render('Por fim, quem tem o posto de campeao do Show?', True, preto)
+    pergunta =  fonte_pergunta.render('Por fim, qual a ultima palavra da 3* pergunta?', True, preto)
     fonte_alternativa = pygame.font.Font('Chendolle.otf',70)
-    A = fonte_alternativa.render('Voce', True, preto)
+    A = fonte_alternativa.render('Em', True, preto)
     B = fonte_alternativa.render('Miranda', True, preto)
-    C = fonte_alternativa.render('Chimbinha', True, preto)
-    D = fonte_alternativa.render('Vasco', True, preto)
+    C = fonte_alternativa.render('Estudou', True, preto)
+    D = fonte_alternativa.render('Insper', True, preto)
     fonte_nivel = pygame.font.Font('Chendolle.otf',75)
     nivel = fonte_nivel.render('15.', True, preto)
     while True:
@@ -560,11 +560,11 @@ def fase_15(tela):
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
-                if  alternativa_A.collidepoint(mouse_pos):
+                if  alternativa_C.collidepoint(mouse_pos):
                     som_acertou.play()
                     desenha_tela_vitoria(tela)
                     break
-                if alternativa_D.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_C.collidepoint(mouse_pos):
+                if alternativa_D.collidepoint(mouse_pos) or alternativa_B.collidepoint(mouse_pos) or alternativa_A.collidepoint(mouse_pos):
                     som_errou.play()
                     funcoes.derrota_2(tela)
 
@@ -574,7 +574,7 @@ def fase_15(tela):
         funcoes.desenha_interface_fases(tela)
         funcoes.desenha_quantidade_moedas_2(tela)
         tela.blit(nivel, (20, 3))
-        tela.blit(A, (148, 250))
+        tela.blit(A, (170, 254))
         tela.blit(B, (505, 250))
         tela.blit(C, (103, 395))
         tela.blit(D, (505, 390))
